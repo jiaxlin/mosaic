@@ -63,9 +63,9 @@ export default function Home() {
           <p className="mb-8 text-gray-800">
             Mosaic was created to make the beauty of visual art accessible to everyone. We believe that art should be experienced, not just seen—and that accessibility can be deeply creative.
           </p>
-          <blockquote className="italic text-gray-600 bg-white/50 rounded-lg px-6 py-4">
-            "I never thought I could experience a painting this way. It's like hearing a story that was once silent."
-          </blockquote>
+         <blockquote className="italic text-gray-600 bg-white/50 rounded-lg px-6 py-4">
+  “I never thought I could experience a painting this way. It’s like hearing a story that was once silent.”
+</blockquote>
         </section>
       </div>
     </main>
