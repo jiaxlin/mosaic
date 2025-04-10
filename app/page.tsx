@@ -10,7 +10,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center px-6 space-y-24 py-20">
         {/* Hero Section */}
         <section className="text-center max-w-2xl">
-<h1 className="text-6xl font-light tracking-wide mb-6 font-[serif] text-white" style={{ textShadow: "0 0 15px rgba(255,255,255,0.9)" }}>
+          <h1 className="text-6xl font-light tracking-wide mb-6 font-[serif] text-white" style={{ textShadow: "0 0 15px rgba(255,255,255,0.9)" }}>
             MOSAIC
           </h1>
           <h2 className="text-2xl font-light tracking-wide mb-6">
@@ -63,9 +63,9 @@ export default function Home() {
           <p className="mb-8 text-gray-800">
             Mosaic was created to make the beauty of visual art accessible to everyone. We believe that art should be experienced, not just seen—and that accessibility can be deeply creative.
           </p>
-         <blockquote className="italic text-gray-600 bg-white/50 rounded-lg px-6 py-4">
-  “I never thought I could experience a painting this way. It’s like hearing a story that was once silent.”
-</blockquote>
+          <blockquote className="italic text-gray-600 bg-white/50 rounded-lg px-6 py-4">
+            &ldquo;I never thought I could experience a painting this way. It&rsquo;s like hearing a story that was once silent.&rdquo;
+          </blockquote>
         </section>
       </div>
     </main>
