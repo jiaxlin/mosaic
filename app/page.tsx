@@ -49,11 +49,28 @@ export default function Home() {
                 description: "Mosaic generates a sound journey that is fully customizable."
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                <h3 className="font-medium text-xl mb-3 text-gray-900">{item.title}</h3>
+              <div key={index} className="space-y-4">
+                <h3 className="text-xl font-medium text-gray-900">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Demo Video Section */}
+        <section className="w-full max-w-5xl">
+          <h2 className="text-3xl font-medium text-center mb-16 text-gray-900">See Mosaic in Action</h2>
+          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/7l5wKt90rEo"
+              title="Mosaic Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0"
+            />
           </div>
         </section>
 
@@ -66,6 +83,53 @@ export default function Home() {
           <blockquote className="italic text-gray-500 bg-gray-50 rounded-lg px-8 py-6 border-l-4 border-[#84a1ff]">
             &ldquo;I never thought I could experience a painting this way. It&rsquo;s like hearing a story that was once silent.&rdquo;
           </blockquote>
+        </section>
+
+        {/* Contact Form */}
+        <section className="w-full max-w-2xl" id="contact">
+          <h2 className="text-3xl font-medium text-center mb-16 text-gray-900">Contact Us</h2>
+          <form 
+            action="https://formspree.io/f/jiajial@stanford.edu"
+            method="POST"
+            className="space-y-6"
+          >
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                rows={4}
+                required
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-[#84a1ff] to-[#c599ff] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-sm hover:shadow-md"
+            >
+              Send Message
+            </button>
+          </form>
         </section>
       </div>
     </main>
