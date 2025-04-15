@@ -100,7 +100,7 @@ export default function Home() {
                 name="name"
                 id="name"
                 required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
               />
             </div>
             <div>
@@ -110,7 +110,7 @@ export default function Home() {
                 name="email"
                 id="email"
                 required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
               />
             </div>
             <div>
@@ -120,7 +120,7 @@ export default function Home() {
                 id="message"
                 rows={4}
                 required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
               />
             </div>
             <button
