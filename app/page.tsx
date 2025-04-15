@@ -1,4 +1,11 @@
-export default function Home() {
+'use client';
+
+import { useState } from 'react';
+import VideoModal from './VideoModal';
+
+export default function Home() {  
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  
   return (
     <main className="min-h-screen relative bg-gradient-to-b from-white to-[#f8f9ff]">
       {/* Subtle gradient accents */}
@@ -16,6 +23,18 @@ export default function Home() {
           <h2 className="text-2xl font-light tracking-tight text-gray-600 mb-8">
             Redefine access to art for <span className="text-black font-medium">everyone</span>
           </h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <button
+              onClick={() => setIsVideoModalOpen(true)}
+              className="bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-[#84a1ff]">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Watch the Video
+            </button>
+          </div>
           <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <input
               type="email"
@@ -57,23 +76,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Demo Video Section */}
-        <section className="w-full max-w-5xl">
-          <h2 className="text-3xl font-medium text-center mb-16 text-gray-900">See Mosaic in Action</h2>
-          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/7l5wKt90rEo"
-              title="Mosaic Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0"
-            />
-          </div>
-        </section>
-
         {/* Mission + Vision */}
         <section className="text-center max-w-3xl bg-white border border-gray-100 p-12 rounded-xl shadow-sm">
           <h2 className="text-3xl font-medium mb-6 text-gray-900">Our Mission</h2>
@@ -85,53 +87,19 @@ export default function Home() {
           </blockquote>
         </section>
 
-        {/* Contact Form */}
-        <section className="w-full max-w-2xl" id="contact">
-          <h2 className="text-3xl font-medium text-center mb-16 text-gray-900">Contact Us</h2>
-          <form 
-            action="https://formspree.io/f/jiajial@stanford.edu"
-            method="POST"
-            className="space-y-6"
+        {/* Contact Button */}
+        <section className="w-full max-w-2xl text-center" id="contact">
+          <h2 className="text-3xl font-medium text-center mb-8 text-gray-900">Contact Us</h2>
+          <p className="text-gray-600 mb-6">Have questions or ideas? Reach out to us directly via email.</p>
+          <a
+            href="mailto:jiajial@stanford.edu?subject=Mosaic%20Inquiry&body=Hi%20Jia%2C"
+            className="inline-block bg-gradient-to-r from-[#84a1ff] to-[#c599ff] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-sm hover:shadow-md"
           >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-              <textarea
-                name="message"
-                id="message"
-                rows={4}
-                required
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84a1ff] focus:border-transparent text-black"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-[#84a1ff] to-[#c599ff] text-white px-8 py-3 rounded-lg hover:opacity-90 transition-all duration-300 font-medium shadow-sm hover:shadow-md"
-            >
-              Send Message
-            </button>
-          </form>
+            Send Message
+          </a>
         </section>
       </div>
+      <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} />
     </main>
   );
 }
